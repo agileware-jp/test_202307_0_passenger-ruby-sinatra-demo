@@ -1,3 +1,5 @@
+env CUSTOM_VALUE_FROM_NGINX_TEMPLATE=foobarbaz;
+
 ##########################################################################
 #  Passenger Standalone is built on the same technology that powers
 #  Passenger for Nginx, so any configuration option supported by Passenger
@@ -71,6 +73,9 @@ http {
         # conflict with the ones Passenger already sets.
         # Learn more at:
         # https://www.phusionpassenger.com/library/config/standalone/intro.html#nginx-configuration-template
+        location = /files {
+            proxy_pass "https://www.ruby-lang.org/ja/";
+        }
 
         ### END your own configuration options ###
     }

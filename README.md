@@ -24,3 +24,15 @@ bundle exec passenger start
 ```
 
 You can then view the application by pointing your browser to localhost:port where port is the number given when starting the application.
+
+### Running the app with custom Nginx template
+
+```console
+bundle exec passenger start --nginx-config-template nginx.conf.erb
+```
+
+Open http://localhost:3000/ to see `"foobarbaz"`.
+
+Open http://localhost:3000/files to see https://www.ruby-lang.org/ja/ (only HTML).
+
+More information: https://www.phusionpassenger.com/library/config/standalone/intro.html#nginx-configuration-template
